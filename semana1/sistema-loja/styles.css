@@ -1,0 +1,55 @@
+
+.cabeçalho{
+    background-color: orange;
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+}
+
+.navegação{
+    margin: 35px;
+}
+
+.nome-da-loja{
+    background-color: mediumseagreen; 
+    text-align: center;
+    margin: 0px;
+    padding: 1px;
+    font-size: 35px;
+}
+
+.slogan{
+    font-size: 20px;
+    text-align: center;
+    background-color: mediumseagreen;
+    margin: 0px;
+}
+
+.logo-loja{
+    width: 200px;
+    height: 200px;
+}
+
+.redes-sociais{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+.rodapé{
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
+h2{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+
+
+
