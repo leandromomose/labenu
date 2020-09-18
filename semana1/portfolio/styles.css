@@ -1,0 +1,90 @@
+.cabeçalho{
+    background-color: skyblue;
+    text-align: right;
+    font-size: 20px;
+    padding: 5px;
+    
+}
+
+.navegação{
+    margin: 10px;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 40px;
+    color: mediumblue;
+}
+
+.meu-nome{
+    text-align: center;
+    font-size: 30px;
+    color: mediumblue;
+}
+
+.foto-leandro{
+    width: 200px;
+    height: 200px;
+}
+
+.imagem{
+    text-align: center;
+}
+
+.boas-vindas{
+    text-align: center;
+    color: mediumblue;
+    font-size: 20px;
+}
+
+.descrição{
+    background-color: skyblue;
+    color: mediumblue;
+    text-align: center;
+    font-size: 25px;
+}
+
+.experiencias{
+    margin: auto;
+    text-align: center;
+}
+
+.habilidades{
+    text-align: center;
+    color: mediumblue;
+}
+
+.lista-habilidades{
+    font-size: 20px;
+    color: mediumblue;
+}
+
+ul {
+    text-align: center;
+    list-style: inside;
+  }
+
+  .siga-me{
+      text-align: center;
+      font-size: 15px;
+      margin-top: 75px;
+  }
+
+  .logos-redes-sociais{
+      width: 50px;
+      height: 50px;
+  }
+
+  #logos{
+      text-align: center;
+  }
+
+  .rodape{
+      background-color: skyblue;
+      padding-top: 5px;
+  }
+
+  .tema{
+      text-align: center;
+      color: mediumblue;
+  }
