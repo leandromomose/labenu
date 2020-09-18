@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de Estoque</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+
     <div>
-        <p>
+        <header class="cabeçalho"> 
+           <a class="navegação" href="index.html">Página Inicial</a>
+           <a class="navegação" href="ctrl-estoque.html">Controle de Estoque</a>
+           <a class="navegação" href="add-produto.html">Adicionar Produto</a>
+           <a class="navegação" href="funcionarios.html">Funcionários</a>
+       </header>
+      
+   </div>
+
+    <div>
+        <p class="nome-da-loja">
             <strong>Do Pequeno Ao Grande</strong>
         </p>
     </div>
     
-    <div>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </div>
-
     <h2>Controle de Estoque</h2>
 
-    <table>
+    <table id="tabela">
         <tr>
             <th>Foto</th>
             <th>Descrição</th>
@@ -31,35 +36,35 @@
         </tr>
 
         <tr>
-            <td><img src="./img/body-bebe.jpg" alt="imagem body-bebe"/></td>
+            <td><img class="imagem-produto" src="./img/body-bebe.jpg" alt="imagem body-bebe"/></td>
             <td>Body</td>
             <td>R$10,00</td>
             <td>150</td>
         </tr>
 
         <tr>
-            <td><img src="./img/vestido.jpg" alt="imagem vestido"/></td>
+            <td><img class="imagem-produto" src="./img/vestido.jpg" alt="imagem vestido"/></td>
             <td>Vestido</td>
             <td>R$35,00</td>
             <td>60</td>
         </tr>
 
         <tr>
-            <td><img src="./img/calça.jpg" alt="imagem calça"/></td>
+            <td><img class="imagem-produto" src="./img/calça.jpg" alt="imagem calça"/></td>
             <td>Calça</td>
             <td>R$20,00</td>
             <td>80</td>
         </tr>
 
         <tr>
-            <td><img src="./img/camiseta.jpg" alt="imagem camiseta"/></td>
+            <td><img class="imagem-produto" src="./img/camiseta.jpg" alt="imagem camiseta"/></td>
             <td>Camiseta</td>
             <td>R$15,00</td>
             <td>90</td>
         </tr>
 
         <tr>
-            <td><img src="./img/short.jpg" alt="imagem short"/></td>
+            <td><img class="imagem-produto" src="./img/short.jpg" alt="imagem short"/></td>
             <td>Short</td>
             <td>R$18,00</td>
             <td>40</td>
@@ -68,6 +73,12 @@
         <!-- Crie mais uma linha desta tabela abaixo \/ -->
 
     </table>
+
+    <div>
+        <footer class="rodapé">
+            <strong>Desenvolvido por Leandro Momose</strong>                                       
+        </footer>
+    </div>
 
 </body>
 </html>

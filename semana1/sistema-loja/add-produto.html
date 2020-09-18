@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adicionar Produto</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+
     <div>
-        <p>
+        <header class="cabeçalho"> 
+           <a class="navegação" href="index.html">Página Inicial</a>
+           <a class="navegação" href="ctrl-estoque.html">Controle de Estoque</a>
+           <a class="navegação" href="add-produto.html">Adicionar Produto</a>
+           <a class="navegação" href="funcionarios.html">Funcionários</a>
+       </header>
+      
+   </div>
+
+    <div>
+        <p class="nome-da-loja">
             <strong>Do Pequeno Ao Grande</strong>
         </p>
     </div>
-    
-    <div>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </div>
-
-    
+     
     <h2>Adicionar Produto</h2>
-    <form action="#">
+    <form id="formulario" action="#">
         <div>
             <label for="link-foto">Link para foto: </label>
             <input type="url" id="link-foto" name="link-foto">
@@ -48,10 +52,16 @@
 
         <div class="form-add">
             <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
-            <button type="submit">Adicionar</button>
+            <button id="botao-enviar" type="submit">Adicionar</button>
         </div>
 
     </form>
+
+    <div>
+        <footer class="rodapé-sem-rolagem">
+            <strong>Desenvolvido por Leandro Momose</strong>                                       
+        </footer>
+    </div>
 
 </body>
 </html>
