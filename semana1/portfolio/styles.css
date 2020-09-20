@@ -1,90 +1,121 @@
-.cabeçalho{
-    background-color: skyblue;
-    text-align: right;
-    font-size: 20px;
-    padding: 5px;
-    
+@import url('https://fonts.googleapis.com/css2?family=Rambla:ital@1&display=swap');
+
+*{
+    margin: 0;
+    font-family: 'Rambla', sans-serif;
 }
 
-.navegação{
+.header{
+    background-color: skyblue;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.menu{
+    margin-top: 30px;
+    text-align: right;
+}
+
+.menu a{
+    text-decoration: none;
+    color: mediumblue;
+    font-size: 20px;
     margin: 10px;
 }
 
-.titulo{
-    text-align: center;
-    font-size: 40px;
-    color: mediumblue;
+#selected{
+    color: orangered;
 }
 
-.meu-nome{
+.main{
     text-align: center;
-    font-size: 30px;
-    color: mediumblue;
-}
-
-.foto-leandro{
-    width: 200px;
-    height: 200px;
-}
-
-.imagem{
-    text-align: center;
-}
-
-.boas-vindas{
-    text-align: center;
-    color: mediumblue;
     font-size: 20px;
+    padding: 10px;
+    margin: 10px;
 }
 
-.descrição{
-    background-color: skyblue;
-    color: mediumblue;
-    text-align: center;
-    font-size: 25px;
+#minha-foto{
+    height: 250px;
+    margin-top: 30px;
 }
 
-.experiencias{
-    margin: auto;
-    text-align: center;
+p{
+    margin: 5px;
 }
 
-.habilidades{
-    text-align: center;
-    color: mediumblue;
-}
-
-.lista-habilidades{
-    font-size: 20px;
-    color: mediumblue;
+h4{
+    margin-top: 30px;
 }
 
 ul {
     text-align: center;
     list-style: inside;
+    margin: 10px;
   }
 
-  .siga-me{
-      text-align: center;
-      font-size: 15px;
-      margin-top: 75px;
+  .logo-labenu{
+    height: 250px;
   }
 
-  .logos-redes-sociais{
-      width: 50px;
-      height: 50px;
+  .logo-labenu:hover{
+    opacity: 40%;
   }
 
-  #logos{
-      text-align: center;
+  .logo-loja{
+      height: 250px;
   }
 
-  .rodape{
-      background-color: skyblue;
-      padding-top: 5px;
+  .logo-loja:hover{
+      opacity: 40%;
   }
 
-  .tema{
-      text-align: center;
-      color: mediumblue;
+  .projeto-labenu{
+      height: 250px;
+      margin: 30px;
   }
+
+  .projeto-loja{
+      height: 250px;
+      margin: 30px;
+  }
+
+.logos-redes-sociais{
+    width: 50px;
+    height: 50px;
+}
+
+button{
+    background-color: skyblue;
+    border: 2px solid skyblue;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+    display: block;
+    margin: auto;
+}
+
+label{
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.caixa-texto{
+    height: 20px;
+    width: 400px;
+}
+
+.escrever-mensagem{
+    height: 250px;
+    width: 400px;
+}
+
+.footer{
+    background-color: skyblue;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    color: mediumblue;
+}
