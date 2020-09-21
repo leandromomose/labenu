@@ -46,6 +46,7 @@ div img {
     border-radius: 5px;
     font-size: 20px;
     color: white;
+    outline: none;
 }
 
 .botao-amarelo:hover {
@@ -128,6 +129,7 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+    outline: none;
 }
 
 td button:hover{
@@ -146,6 +148,7 @@ td button:active{
 #caixa-texto-pesquisa{
     border: none;
     border-bottom: 2px solid black;
+    outline: none;
 }
 
 #lupa-icone{
@@ -169,6 +172,7 @@ div table{
     color: black;
     display: block;
     margin: auto;
+    outline: none;
 }
 
 #back-button:hover {
