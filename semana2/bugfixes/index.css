@@ -109,6 +109,11 @@ div:last-child {
     text-align: center;
 }
 
+.imagem-tabela{
+    height: 50px;
+    width: 50px;
+}
+
 table {
     width: 60%;
 }
