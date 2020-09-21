@@ -105,6 +105,10 @@ div:last-child {
     text-align: center;
 }
 
+.texto-da-tabela{
+    text-align: center;
+}
+
 table {
     width: 60%;
 }
