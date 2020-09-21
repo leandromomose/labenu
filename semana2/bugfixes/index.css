@@ -130,9 +130,18 @@ td button:hover{
     background-color: #fad763;
 }
 
+td button:active{
+    color: white;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+}
+
+#caixa-texto-pesquisa{
+    border: none;
+    border-bottom: 2px solid black;
 }
 
 #lupa-icone{
