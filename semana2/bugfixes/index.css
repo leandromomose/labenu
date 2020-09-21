@@ -151,9 +151,25 @@ td button:active{
     outline: none;
 }
 
+#caixa-texto-pesquisa:hover{
+    opacity: 0.2;
+}
+
+#caixa-texto-pesquisa:active{
+    opacity: 1;
+}
+
 #lupa-icone{
     width: 30px;
     height: 30px;
+}
+
+#lupa-icone:hover{
+    opacity: 20%;
+}
+
+#lupa-icone:active{
+    opacity: 100%;
 }
 
 div table{
