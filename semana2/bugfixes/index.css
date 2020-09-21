@@ -84,6 +84,10 @@ div img {
     padding: 15px 0px;
 }
 
+ol{
+    list-style-position: inside;
+}
+
 
 #container-para-comprar {
     background-color: #e7eb90;
@@ -91,8 +95,6 @@ div img {
 
 #container-para-comprar>p {
     color: #c44f00;
-    padding: 100px 0;
-    font-size: 60px;
 }
 
 
