@@ -131,6 +131,11 @@ td button {
     height: 100px;
 }
 
+#lupa-icone{
+    width: 30px;
+    height: 30px;
+}
+
 
 #back-button {
     background-color: white;
