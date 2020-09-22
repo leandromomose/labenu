@@ -7,6 +7,10 @@ body {
     color: white;
 }
 
+#main-container{
+    display: grid;
+}
+
 .green-background {
     background-color: green;
 }
