@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Rambla:ital@1&display=swap');
+
+*{
+    margin: 0;
+    font-family: 'Rambla', sans-serif;
+}
+
+.header{
+    background-color: skyblue;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.menu{
+    margin-top: 30px;
+    text-align: right;
+}
+
+.menu a{
+    text-decoration: none;
+    color: mediumblue;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#selected{
+    color: orangered;
+}
+
+.main{
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#minha-foto{
+    height: 250px;
+    margin-top: 30px;
+}
+
+p{
+    margin: 5px;
+}
+
+h4{
+    margin-top: 30px;
+}
+
+ul {
+    text-align: center;
+    list-style: inside;
+    margin: 10px;
+  }
+
+  .logo-labenu{
+    height: 250px;
+  }
+
+  .logo-labenu:hover{
+    opacity: 40%;
+  }
+
+  .logo-loja{
+      height: 250px;
+  }
+
+  .logo-loja:hover{
+      opacity: 40%;
+  }
+
+  .projeto-labenu{
+      height: 250px;
+      margin: 30px;
+  }
+
+  .projeto-loja{
+      height: 250px;
+      margin: 30px;
+  }
+
+.logos-redes-sociais{
+    width: 50px;
+    height: 50px;
+}
+
+button{
+    background-color: skyblue;
+    border: 2px solid skyblue;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+    display: block;
+    margin: auto;
+}
+
+label{
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.caixa-texto{
+    height: 20px;
+    width: 400px;
+}
+
+.escrever-mensagem{
+    height: 250px;
+    width: 400px;
+}
+
+.footer{
+    background-color: skyblue;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    color: mediumblue;
+}
