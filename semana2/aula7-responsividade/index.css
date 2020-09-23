@@ -1,0 +1,150 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: grid;
+}
+
+#main-container{
+    display: grid;
+    grid-gap: 10px;
+}
+
+
+#first-block {
+    display: grid;
+    background-color: red;
+    height: 10vh;
+    border: none;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+}
+
+#second-block{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+#third-block{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.blue-block {
+    background-color: blue;
+    height: 10vh;
+    width: 30vw;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+}
+
+.yellow-block {
+    background-color: yellow;
+    height: 10vh;
+    width: 30vw;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+}
+
+.green-block {
+    background-color: green;
+    height: 10vh;
+    width: 30vw;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+}
+
+#fourth-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    height: 30vh;
+    width: 45vw;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+}
+
+#fifth-block{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.white-block {
+    background-color: white;
+    height: 10vh;
+    width: 30vw;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+}
+
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+    #second-block{
+        grid-template: 1fr 1fr / 1fr 1fr;
+        grid-gap: 10px;
+}
+    #third-block{
+        grid-template: 1fr 1fr / 1fr 1fr; 
+        grid-gap: 10px;
+    }
+
+    #fifth-block{
+        grid-template: 1fr 1fr / 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    .blue-block{
+        width: 45vw;
+    }
+
+    .yellow-block{
+        width: 45vw;
+    }
+
+    .green-block{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 95vw;
+    }
+
+    #eleven{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 95vw;
+    }
+
+    .white-block{
+        width: 45vw;
+    }
+
+    @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+       
+    }
+
+
+
+
+    
