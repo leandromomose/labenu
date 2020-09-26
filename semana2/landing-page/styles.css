@@ -1,50 +1,67 @@
 *{
     margin: 0;
-}
-
-header{
     background-color: #DAE5E8;
 }
 
-header > img{
-    height: 200px;
-    width: 200px;
-}
-
-nav{
-    text-align: end;
-    margin-right: 100px;
-    font-size: 20px;
-}
-
-nav > a{
-    text-decoration: none;
-    color: #2E3237;
-    padding: 10px;
+#logo-4comfort{
+    height: 400px;
+    width: 400px;
 }
 
 main{
-    background-color: #7D807B;
-    padding-top: 20px;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    margin: 40px 40px;
 }
 
-#imagem-1{
-    text-align: end;
+h3{
+    padding: 3px;
+}
+
+#main-text{
+    text-align: center;
+    color: #2E3237;
+    padding-top: 150px;
+}
+
+#foto-shoes{
+    opacity: 0.5;
+}
+
+#foto-shoes:hover{
+    opacity: 1;
+}
+
+#foto-two-shoes{
+    opacity: 0.5;
+}
+
+#foto-two-shoes:hover{
+    opacity: 1;
+}
+
+.tamanho-foto{
+    height: 470px;
+    width: 725px;
+}
+
+#lista-text{
+    text-align: center;
+    color: #2E3237;
+    padding-top: 150px;
 }
 
 footer{
-    background-color: #DAE5E8;
     text-align: center;
-    height: 200px;
 }
 
-footer > h3{
-    padding: 15px;
+#siga-nos{
+    margin-top: 100px;
+    color: #2E3237;
 }
 
-footer > a > img{
-    height: 50px;
-    width: 50px;
-    padding-bottom: 15px;
+.redes-sociais{
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
 }
-
