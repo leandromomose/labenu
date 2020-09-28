@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@500&display=swap');
+
+*{
+    margin: 0;
+    background-color: #DAE5E8;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+/* cabeçalho */
+#logo-4comfort{
+    height: 400px;
+    width: 400px;
+}
+/* principal */
+main{
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    margin: 40px 40px;
+}
+
+h3{
+    padding: 3px;
+}
+
+#main-text{
+    text-align: center;
+    color: #2E3237;
+    padding-top: 100px;
+}
+
+#foto-shoes{
+    opacity: 0.5;
+}
+
+#foto-shoes:hover{
+    opacity: 1;
+}
+
+#foto-two-shoes{
+    opacity: 0.5;
+}
+
+#foto-two-shoes:hover{
+    opacity: 1;
+}
+
+.tamanho-foto{
+    height: 470px;
+    width: 725px;
+}
+
+#lista-text{
+    text-align: center;
+    color: #2E3237;
+    padding-top: 100px;
+}
+/* rodapé */
+footer{
+    margin-left: 40px;
+}
+
+.redes-sociais{
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-device-width : 375px) and (max-device-width : 667px) {
+    main{
+        grid-template: 1fr 1fr 1fr 1fr / 1fr;
+    }
+
+    #main-text{
+        padding-top: 150px;
+    }
+
+    #foto-two-shoes{
+        order: 4;
+    }
+
+    #lista-text{
+        order: 3;
+        padding-top: 150px;
+    }
+}
+
+/* página de produtos */
+
+#produtos-texto{
+    text-align: center;
+    margin-left: 150px;
+    color: #2E3237;
+}
+
+#produtos-texto > h3{
+    padding-top: 5px;
+    color: #2E3237;
+}
+
+#produtos-fotos{
+    padding-top: 20px; 
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#produtos-fotos2{
+    padding-top: 20px; 
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fotos-tenis{
+    height: 300px;
+    width: 600px;
+    padding: 10px;
+}
+
+button{
+    color: #DAE5E8;
+    background-color: #2E3237;
+    margin: 30px;
+    height: 30px;
+    width: 90px;
+}
+
+@media screen and (min-device-width : 375px) and (max-device-width : 667px) {
+    #produtos-fotos{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #produtos-fotos2{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        padding-top: 2px;
+    }
+}
+
+/* página personalizado */
+
+#personalizado-texto{
+    text-align: center;
+    color: #2E3237;
+}
+
+input{
+    display: block;
+    margin: 10px;
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    margin-left: 600px;
+    border: 3px #2E3237 solid;
+}
+
+#enviar{
+    margin-left: 720px;
+}
+
+#black-calcado{
+    text-align: center;
+}
+
+@media screen and (min-device-width : 375px) and (max-device-width : 667px) {
+
+    input{
+        margin-left: 50px;
+    }
+
+    #enviar{
+        margin-left: 160px;
+    }
+
+     footer-personalizado{
+        bottom: 0;
+        position: fixed;
+    }
+}
