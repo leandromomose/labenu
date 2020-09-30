@@ -146,5 +146,112 @@ if (categoria <= 4 && categoria > 0){
 
 console.log("Quantidade de ingressos: " + (quantidade) + " ingressos")
 console.log("---Valores---")
-*/
 
+if (tipo === "DO" && etapa === "SF" && categoria === 1){
+    console.log("Valor do ingresso: R$ 1320")
+    const total = (quantidade)*1320
+    console.log("Valor total: R$ " + total)
+} else if (tipo === "DO" && etapa === "SF" && categoria === 2){
+    console.log("Valor do ingresso: R$ 880")
+    const total = (quantidade)*880
+    console.log("Valor total: R$ " + total)
+} else if (tipo === "DO" && etapa === "SF" && categoria === 3){
+    console.log("Valor do ingresso: R$ 550")
+    const total = (quantidade)*550
+    console.log("Valor total: R$ " + total)
+} else if (tipo === "DO" && etapa === "SF" && categoria === 4){
+    console.log("Valor do ingresso: R$ 220")
+    const total = (quantidade)*220
+    console.log("Valor total: R$ " + total)
+} 
+
+if (tipo === "DO" && etapa === "DT" && categoria === 1){
+    console.log("Valor do ingresso: R$ 660")
+    const total = (quantidade)*660
+    console.log("Valor total: R$ " + total)
+} else if (tipo === "DO" && etapa === "DT" && categoria === 2){
+    console.log("Valor do ingresso: R$ 440")
+    const total = (quantidade)*440
+    console.log("Valor total: R$ " + total)
+} else if (tipo === "DO" && etapa === "DT" && categoria === 3){
+    console.log("Valor do ingresso: R$ 330")
+    const total = (quantidade)*330
+    console.log("Valor total: R$ " + total)
+} else if (tipo === "DO" && etapa === "DT" && categoria === 4){
+    console.log("Valor do ingresso: R$ 170")
+    const total = (quantidade)*170
+    console.log("Valor total: R$ " + total)
+} 
+
+if (tipo === "DO" && etapa === "FI" && categoria === 1){
+    console.log("Valor do ingresso: R$ 1980")
+    const total = (quantidade)*1980
+    console.log("Valor total: R$ " + total)
+} else if (tipo === "DO" && etapa === "FI" && categoria === 2){
+    console.log("Valor do ingresso: R$ 1320")
+    const total = (quantidade)*1320
+    console.log("Valor total: R$ " + total)
+} else if (tipo === "DO" && etapa === "FI" && categoria === 3){
+    console.log("Valor do ingresso: R$ 880")
+    const total = (quantidade)*880
+    console.log("Valor total: R$ " + total)
+} else if (tipo === "DO" && etapa === "FI" && categoria === 4){
+    console.log("Valor do ingresso: R$ 330")
+    const total = (quantidade)*330
+    console.log("Valor total: R$ " + total)
+} 
+
+if (tipo === "IN" && etapa === "SF" && categoria === 1){
+    console.log("Valor do ingresso: U$ 321.95")
+    const total = (quantidade)*321.95
+    console.log("Valor total: U$ " + total)
+} else if (tipo === "IN" && etapa === "SF" && categoria === 2){
+    console.log("Valor do ingresso: U$ 214.63")
+    const total = (quantidade)*214.63
+    console.log("Valor total: U$ " + total)
+} else if (tipo === "IN" && etapa === "SF" && categoria === 3){
+    console.log("Valor do ingresso: U$ 134.14")
+    const total = (quantidade)*134.14
+    console.log("Valor total: U$ " + total)
+} else if (tipo === "IN" && etapa === "SF" && categoria === 4){
+    console.log("Valor do ingresso: U$ 53.65")
+    const total = (quantidade)*53.65
+    console.log("Valor total: U$ " + total)
+} 
+
+if (tipo === "IN" && etapa === "DT" && categoria === 1){
+    console.log("Valor do ingresso: U$ 160.97")
+    const total = (quantidade)*160.97
+    console.log("Valor total: U$ " + total)
+} else if (tipo === "IN" && etapa === "DT" && categoria === 2){
+    console.log("Valor do ingresso: U$ 107.31")
+    const total = (quantidade)*107.31
+    console.log("Valor total: U$ " + total)
+} else if (tipo === "IN" && etapa === "DT" && categoria === 3){
+    console.log("Valor do ingresso: U$ 80.48")
+    const total = (quantidade)*80.48
+    console.log("Valor total: U$ " + total)
+} else if (tipo === "IN" && etapa === "DT" && categoria === 4){
+    console.log("Valor do ingresso: U$ 41.46")
+    const total = (quantidade)*41.46
+    console.log("Valor total: U$ " + total)
+} 
+
+if (tipo === "IN" && etapa === "FI" && categoria === 1){
+    console.log("Valor do ingresso: U$ 482.92")
+    const total = (quantidade)*482.92
+    console.log("Valor total: U$ " + total)
+} else if (tipo === "IN" && etapa === "FI" && categoria === 2){
+    console.log("Valor do ingresso: U$ 321.95")
+    const total = (quantidade)*321.95
+    console.log("Valor total: U$ " + total)
+} else if (tipo === "IN" && etapa === "FI" && categoria === 3){
+    console.log("Valor do ingresso: U$ 214.63")
+    const total = (quantidade)*214.63
+    console.log("Valor total: U$ " + total)
+} else if (tipo === "IN" && etapa === "FI" && categoria === 4){
+    console.log("Valor do ingresso: U$ 80.48")
+    const total = (quantidade)*80.48
+    console.log("Valor total: U$ " + total)
+} 
+*/
