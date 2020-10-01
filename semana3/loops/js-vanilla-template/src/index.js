@@ -69,8 +69,3 @@ for(let array of arrayOriginal){
 console.log("O maior número é " + maiorNumero + " e o menor é " + menorNumero)
 */
   
-let valor = 0
-for(let i = 0; i < 5; i++) {
-  valor += i
-}
-console.log(valor)
