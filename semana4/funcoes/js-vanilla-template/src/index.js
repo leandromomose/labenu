@@ -79,14 +79,72 @@ let numeros = (a, b) =>{
 const resposta = numeros(8, 23)
 console.log(resposta)
 
-*/
+c.
 
 let mensagem = (a) => {
     for(let i = 0; i < 10; i++){
-        return mensagem
+        console.log(a)
     }
 }
 
-const a = "Vamo que vamo!"
-console.log(a)
+let imprime = mensagem ("Vamo que vamo")
     
+*/
+
+// EXERCÍCIO 6
+
+//const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+
+/* 
+
+a.
+
+let arrayDeNumeros = (array) => {
+    return array.length
+}
+
+let quantidadeDeElementos = array.length
+console.log(quantidadeDeElementos) 
+
+b.
+
+let checarNumeroPar = (numero) =>{
+    if(numero % 2 === 0){
+        return true
+    } else{
+        return false
+    }
+}
+
+let resposta = checarNumeroPar (5)
+console.log(resposta)
+
+c.
+
+let tamanhoArrayPar = (array) => {
+    let arrayPar = []
+    for (let i = 0; i < array.length ;i++) {
+        if (array % 2 === 0){
+            arrayPar.push(array[i])
+        }  
+    }
+    return arrayPar.length   
+}
+let novaArrayPar = tamanhoArrayPar(array)
+console.log(novaArrayPar)
+
+d.
+
+let verificaParidade = (arrayPar) => {
+    for (let i = 0; i < arrayPar.length ;i++) {
+        if (arrayPar % 2 === 0){
+            return true
+        } else{
+            return false
+        }
+    }   
+}
+let verifica = vericaParidade(arrayPar)
+console.log(verifica)
+
+*/
