@@ -88,3 +88,55 @@
 //     }
 // }
 // doisNumeros(15, 30)
+
+// Exercícios de Funções
+// 1.
+
+// let array = [4, 8, 20, 89, 86, 83]
+
+// 2.
+
+// let mensagem = () => {
+//      alert("Hello Labenu!")
+// }
+
+// const chamada = mensagem()
+
+// Exercícios de Objetos
+
+// 1. Array é uma sequência não ordenada de elementos, que podem ser diferentes ou não entre si e que temos acesso através do seu índice. Podemos utilizá-la, quando quisermos guardar mais de uma informação ao mesmo tempo. Objetos, são uma estrutura de sitaxe, código, onde conseguimos representar dados mais complexos de uma maneira mais organizada. Através da sua estrutura, conseguimos ter uma propriedade que terá a sua chave e o seu valor. Em outras palavras, utilizamos array quando precisarmos apenas armazenar mais de uma informação, sem nos preocupar com a organização dessas informações, e utilizamos objetos, quando precisarmos ter uma estrutura mais organizada de informações.
+
+// 2. 
+
+
+// 3. 
+
+// const meuFilmeFavorito = {
+//     titulo: "Seven Pounds",
+//     ano: 2008,
+//     diretor: "Gabriele Muccino",
+//     cast: ["Will smith", " Rosario Dawson", " Woody Harrelson", " Michael Ealy"] 
+// }
+
+// console.log(`Venha assistir ao filme ${meuFilmeFavorito.titulo}, de ${meuFilmeFavorito.ano}, dirigido por ${meuFilmeFavorito.diretor} e etrelado por ${meuFilmeFavorito.cast}`)
+
+// 4. 
+
+// const pessoa = {
+//     nome: "Leandro",
+//     idade: 34,
+//     email: "leandro@gmail.com",
+//     endereco: "BH"
+// }
+
+// const anonimizarPessoa = {
+//     ...pessoa,
+//     nome:"ANÔNIMO"
+// }
+
+// console.log(anonimizarPessoa)
+
+// Exercícios de Funções de array
+
+// 1. 
+// a.
