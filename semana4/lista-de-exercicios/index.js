@@ -129,9 +129,12 @@
 //     endereco: "BH"
 // }
 
-// const anonimizarPessoa = {
-//     ...pessoa,
-//     nome:"ANÔNIMO"
+// function anonimizarPessoa(){
+//     const pessoaAnonima = {
+//         ...pessoa,
+//         nome:"ANÔNIMO"
+//     }
+//     return pessoaAnonima
 // }
 
 // console.log(anonimizarPessoa)
@@ -139,4 +142,119 @@
 // Exercícios de Funções de array
 
 // 1. 
+
+// let pessoas = [
+// 	{ nome: "Pedro", idade: 20 },
+// 	{ nome: "João", idade: 10 },
+// 	{ nome: "Paula", idade: 12 },
+// 	{ nome: "Artur", idade: 89 } 
+// ]
+
 // a.
+
+// const adultos = pessoas.filter((pessoa, index, array) => {
+//     return pessoa.idade >= 20
+// })
+
+// console.log(adultos)
+
+// b.
+
+// const criancas = pessoas.filter((pessoa, index, array) => {
+//     return pessoa.idade < 20
+// })
+
+// console.log(criancas)
+
+// 2.
+
+// const array = [1, 2, 3, 4, 5, 6]
+
+// a.
+
+// const arrayDobro = array.map((numero) => {
+//     return numero*2 
+// })
+
+// console.log(arrayDobro)
+
+// b.
+
+// const arrayTriplaString = array.map((numero, index, array) => {
+//     return `${numero*3}`
+// })
+
+// console.log(arrayTriplaString)
+
+// c.
+
+// const parOuImpar = array.map((numero, index, array) => {
+//     if (numero % 2 === 0){
+//         return `${numero} é par`
+//     } else if (numero % 2 !== 0){
+//         return `${numero} é ímpar`
+//     }
+// })
+
+// console.log(parOuImpar)
+
+// 3.
+
+// const pessoas = [
+// 	{ nome: "Paula", idade: 12, altura: 1.8},
+// 	{ nome: "João", idade: 20, altura: 1.3},
+// 	{ nome: "Pedro", idade: 15, altura: 1.9},
+// 	{ nome: "Luciano", idade: 22, altura: 1.8},
+// 	{ nome: "Artur", idade: 10, altura: 1.2},
+// 	{ nome: "Soter", idade: 70, altura: 1.9}
+// ]
+
+// a.
+
+// const regraParaEntrada = pessoas.filter ((pessoa) => {
+//     return pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60
+// })
+
+// console.log(regraParaEntrada)
+
+// b.
+
+// const naoPodem = pessoas.filter((pessoa) => {
+//     return pessoa.altura < 1.5 || pessoa.idade < 14 || pessoa.idade > 60
+// })
+
+// console.log(naoPodem)
+
+// 4.
+
+// const consultas = [
+// 	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+// 	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+// 	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+// 	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+// ]
+
+// const emailAutomatico = consultas.map ((pessoa) => {
+
+//     if (pessoa.cancelada === false){
+//         return `Olá, ${pessoa.nome}. Estamos enviando esta mensagem para da consulta no dia ${pessoa.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`
+//     } 
+    
+//     if (pessoa.cancelada === true){
+//         return `Olá, ${pessoa.nome}. Infelizmente, sua consulta marcada para o dia ${pessoa.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la.`
+//     }
+// })
+
+// console.log (emailAutomatico)
+
+// 5. 
+
+// const contas = [
+// 	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+// 	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+// 	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+// 	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+// 	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+// 	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+// ]
+
