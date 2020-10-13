@@ -94,6 +94,38 @@
 
 // let array = [4, 8, 20, 89, 86, 83]
 
+// let maior = 0
+// let segundoMaior = 0
+
+// for (let numero of array){
+//     if (numero > maior){
+//         maior = numero
+//     }
+// }
+
+// for (let numero of array){
+//     if (numero > segundoMaior && numero !== maior){
+//         segundoMaior = numero
+//     }
+// }
+// console.log(segundoMaior)
+
+// let menor = Infinity
+// let segundoMenor = Infinity
+
+// for (let numero of array){
+//     if (numero < menor){
+//         menor = numero
+//     }
+// }
+
+// for (let numero of array){
+//     if (numero < segundoMenor && numero !== menor){
+//         segundoMenor = numero
+//     }
+// }
+// console.log(segundoMenor)
+
 // 2.
 
 // let mensagem = () => {
@@ -108,6 +140,17 @@
 
 // 2. 
 
+// const criaRetangulo = (lado1, lado2) => {
+//     const retangulo = {
+//         largura: lado1,
+//         altura: lado2,
+//         primeto: 2*(lado1 + lado2),
+//         area: lado1 * lado2
+//     }
+//     return retangulo
+// }
+
+// criaRetangulo(10, 20)
 
 // 3. 
 
@@ -234,6 +277,14 @@
 // 	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
 // ]
 
+// consultas.forEach ((pessoa) => {
+//     if (consultas.genero === "masculino"){
+//         consultas.nome = `Sr. ${nome}` 
+//     } else if (consultas.genero === "feminino"){
+//         consultas.nome = `Sra. ${nome}`
+// }
+// })
+
 // const emailAutomatico = consultas.map ((pessoa) => {
 
 //     if (pessoa.cancelada === false){
@@ -258,3 +309,15 @@
 // 	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
 // ]
 
+// contas.forEach((cliente) => {
+//     let soma = 0
+
+//     for (let compra of cliente.compras) {
+//         soma += compra
+//     }
+//     cliente.saldoTotal -= soma
+//    for (let i = 0; i < cliente.compras.length; i++) {
+//     soma += cliente.compras[i]              
+//    }
+//    console.log(soma)
+// })
