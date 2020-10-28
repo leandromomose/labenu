@@ -5,6 +5,10 @@ import axios from 'axios';
 const Container = styled.div`
     text-align: center;
 `
+const BotaoDeletar = styled.span`
+    color: red;
+    padding-left: 10px;
+`
 
 class Lista extends React.Component {
     state = {
@@ -21,24 +25,22 @@ class Lista extends React.Component {
                 Authorization: "leandro-momose-dumont"
             }
         }).then(response => {
+            console.log(response.data)
             this.setState({pessoas: response.data})
-            this.pegarUsuarios()
         }).catch(error => {
             console.log(error.message)
         })
     }
 
-    removePessoa = (id) => {
-        axios.delete("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/:id", {
+    removePessoa = (userId) => {
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${userId}`, {
             headers: {
-                Authotization: "leandro-momose-dumont"
-            },
-            params: {
-                id: id
+                Authorization: "leandro-momose-dumont"
             }
-        }).then(response => {
+        }).then((response) => {
             alert("Usuário deletado com sucesso!")
-        }).catch(error => {
+            this.pegarUsuarios()
+        }).catch((error) => {
             alert("Erro ao tentar deletar o usuário, tente novamente.")
             console.log(error.message)
         })
@@ -46,13 +48,13 @@ class Lista extends React.Component {
 
     render(){
         const usuariosCadastrados = this.state.pessoas.map(pessoa => {
-            return <p key={pessoa.id}>{pessoa.name}</p>
+            return <p key={pessoa.id}>{pessoa.name} <BotaoDeletar onClick ={() => this.removePessoa(pessoa.id)}>x</BotaoDeletar></p>
+        
         })
 
         return (
         <Container>
             {usuariosCadastrados}
-            <button onClick = {this.removePessoa}>X</button>
         </Container>
         )
     } 

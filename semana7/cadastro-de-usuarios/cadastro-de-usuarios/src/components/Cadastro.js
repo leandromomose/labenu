@@ -23,12 +23,11 @@ class Cadastro extends React.Component {
                 Authorization: "leandro-momose-dumont"
             }
         }).then(response => {
-            this.setState({nameValue: ""})
-            this.setState({emailValue: ""})
             alert("Usuário criado com sucesso!")
+            this.setState({nameValue: "", emailValue: ""})
         }).catch(error => {
             alert("Não foi possível criar um novo usuário, tente novamente.")
-            console.log(error.data)
+            console.log(error.message)
         })    
     }
 
