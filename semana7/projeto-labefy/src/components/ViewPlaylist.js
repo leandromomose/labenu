@@ -14,7 +14,7 @@ class ViewPlaylist extends React.Component {
 
   componentDidMount = () => {
       this.getAllPlaylists()
-  }
+    }
 
   getAllPlaylists = () => {
       axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists", {
@@ -22,16 +22,31 @@ class ViewPlaylist extends React.Component {
               Authorization: "leandro-momose-dumont"
             }
         }).then((response) => {
-            this.setState({playlists: response.data})
+            this.setState({playlists: response.data.result.list})
         }).catch((error) => {
             console.log(error.message)
         })
     }
 
+    deletePlaylist = (playlistId) => {
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlistId}`, {
+            headers: {
+                Authorization: "leandro-momose-dumont"
+            }
+        }).then((response) => {
+            alert(`Playlist deleted succesfully!`)
+            this.getAllPlaylists()
+        }).catch((error) => {
+            alert(`Playlist NOT deleted, try again.`)
+            console.log(error.message)
+        })
+    }
+
   render() {
-    const renderPlaylists = this.state.playlists.map((playlist) => {
-    return <p key={playlist.id}>{playlist.name} <DeleteButton>Delete Playlist</DeleteButton></p>
+    const renderPlaylists = this.state.playlists.map(playlist => {
+    return <p key={playlist.id}>{playlist.name} <DeleteButton onClick={() => this.deletePlaylist(playlist.id)}>Delete Playlist</DeleteButton></p>
     })
+  
 
     return (
       <div>
