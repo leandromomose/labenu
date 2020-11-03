@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "axios";
+import PlaylistDetail from "./PlaylistDetail";
 
 const DeleteButton = styled.button`
     background-color: red;
@@ -9,7 +10,9 @@ const DeleteButton = styled.button`
 
 class ViewPlaylist extends React.Component {
   state = {
-    playlists: []
+    playlists: [],
+    currentPage: "playlists",
+
   }
 
   componentDidMount = () => {
@@ -42,19 +45,36 @@ class ViewPlaylist extends React.Component {
         })
     }
 
-  render() {
-    const renderPlaylists = this.state.playlists.map(playlist => {
-    return <p key={playlist.id}>{playlist.name} <DeleteButton onClick={() => this.deletePlaylist(playlist.id)}>Delete Playlist</DeleteButton></p>
-    })
-  
+    changePage = (playlistId) => {
+        if (this.state.currentPage === "playlist") {
+            this.setState({currentPage: "playlistDetail", playlistId: playlistId})
+        } else {
+            this.setState({currentPage: "playlist", playlistId: ""})
+        }
+    }
 
-    return (
-      <div>
-        {renderPlaylists}
-      </div>
-      
-    );
-  }
+  render() {
+    
+        return (
+            <div>
+                {this.state.currentPage === "playlist" ? (
+                    <div>
+                        <ul>
+                            {this.state.playlists.length === 0 && <div>There are No playlists created yet, create your playlists.</div>}
+                            {this.state.playlists.map(playlist => {
+                                return (
+                                <li key={playlist.id}>{playlist.name} <DeleteButton onClick={() => this.deletePlaylist(playlist.id)}>Delete Playlist</DeleteButton></li>
+                                )
+                            })}        
+                        </ul>
+                    </div>
+        
+                ) : (
+                    <PlaylistDetail userId={this.state.userId} changePage={this.changePage} />
+                )}
+            </div>
+        )
+    }
 }
 
 export default ViewPlaylist;
