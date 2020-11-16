@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Card from '../components/Card';
 import axios from 'axios'
 
 const MainContainer = styled.div`
@@ -49,11 +48,21 @@ function MatchScreen(props) {
         })
     }
 
+    const resetMatches = () => {
+        Axios.put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/leandro/clear")
+        .then(response => {
+          console.log(response)
+        })
+        .catch(error => {
+          console.log(error.message)
+        })
+      }
+
   return (
     <MainContainer>
         <Header>
-            <h1>Astromatch</h1>
             <button onClick={props.goToStart}>Profile screen</button>
+            <h1>Astromatch</h1>
         </Header>
         <div>
             {profileMatch.map((profile) => {
@@ -64,6 +73,9 @@ function MatchScreen(props) {
                     </div>
                 )
             })}
+        </div>
+        <div>
+            <button onClick={resetMatches}>Reset matches</button>
         </div>
     </MainContainer>
   );
