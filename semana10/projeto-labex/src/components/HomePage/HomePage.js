@@ -1,5 +1,11 @@
 import React from "react";
-import {useHistory} from "react-router-dom";  
+import styled from "styled-components";
+import {useHistory} from "react-router-dom";
+
+const Buttons = styled.button`
+  padding: 16px;
+  margin: 16px;
+`
 
 function HomePage() {
 
@@ -15,9 +21,10 @@ function HomePage() {
 
   return (
     <div>
-      <p>HomePage</p>
-      <button onClick={goToApplicationForm}>Application Form Page</button>
-      <button onClick={goToLoginPage}>Login Page</button>
+      <h1>LabeX</h1>
+      <h3>Encontre as melhores viagens espaciais!</h3>
+      <Buttons onClick={goToApplicationForm}>Quero me candidatar</Buttons>
+      <Buttons onClick={goToLoginPage}>Área do administrador</Buttons>
     </div>
   );
 }
