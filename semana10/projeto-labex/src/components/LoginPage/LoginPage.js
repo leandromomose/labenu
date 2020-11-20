@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
+import { useForm } from "../../hooks/useFrom";
 
 const LoginContainer = styled.div`
   display: flex;
@@ -9,15 +10,14 @@ const LoginContainer = styled.div`
   align-items: center;
 `
 
-const InputBox = styled.input`
-  width: 15vw;
+const Form = styled.form`
+  width: 20vw;
   margin-bottom: 15px;
 `
 
 function LoginPage() {
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const {form, onChange} = useForm({email: "", password: ""})
   const history = useHistory()
 
   useEffect(() => {
@@ -26,19 +26,19 @@ function LoginPage() {
       history.push("/trips/list")
     }
   }, [history])
-  
-  const handleEmail = (event) => {
-    setEmail(event.target.value)
+
+  const handleInput = (event) => {
+    const {value, name} = event.target
+    onChange(value, name)
   }
 
-  const handlePassword = (event) => {
-    setPassword(event.target.value)
-  }
+  const login = (event) => {
 
-  const login = () => {
+    event.preventDefault()
+
     const body = {
-      email: email,
-      password: password
+      email: form.email,
+      password: form.password
     }
 
     axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/leandro-dumont/login", body)
@@ -58,10 +58,25 @@ function LoginPage() {
   return (
     <LoginContainer>
       <h1>Login</h1>
-      <InputBox placeholder="E-mail" value={email} onChange={handleEmail}/>
-      <InputBox placeholder="Senha" value={password} onChange={handlePassword}/>
-      <button onClick={login}>Login</button>
-      
+      <Form onSubmit={login}>
+        <input 
+          required
+          type={"email"}
+          placeholder="E-mail" 
+          value={form.email} 
+          onChange={handleInput}
+          name={"email"}
+        />
+        <input 
+          required
+          type={"password"}
+          placeholder="Senha" 
+          value={form.password} 
+          onChange={handleInput}
+          name={"password"}
+        />
+        <button>Login</button>
+      </Form>
       
       {/* <button onClick={goToTripDetailsPage}>Trip Details Page</button> */}
     </LoginContainer>
