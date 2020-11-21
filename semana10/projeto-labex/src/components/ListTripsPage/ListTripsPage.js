@@ -1,27 +1,21 @@
 import React, {useState, useEffect} from "react";
+import styled from 'styled-components';
 import {useHistory} from "react-router-dom";
 import axios from "axios";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
+import { useTripsList } from "../../hooks/useTripsList";
+
+const ListaViagem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 function ListTripsPage() {
 
-  const [list, setList] = useState([])
+  const trips = useTripsList()
   const history = useHistory()
   useProtectedPage()
-
-  useEffect(() => {
-    getListTrips()
-  }, [])
-
-  const getListTrips = () => {
-    axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/leandro-dumont/trips")
-    .then((response) => {
-      setList(response.data.trips)
-    })
-    .catch((error) => {
-      console.log(error.message)
-    })
-  }
 
   const goToCreateTripPage = () => {
     history.push("/trips/create")
@@ -32,14 +26,19 @@ function ListTripsPage() {
     history.push("/login")
   }
 
+  const goToTripDetailsPage = () => {
+    history.push(`/trips/details/${trips.id}`)
+  }
+
   return (
     <div>
       <h1>Lista de Viagens</h1>
-      <p>{list.map((trip) => {
+      <p>{trips.map((trip) => {
         return(
-          <div key={trip.id}>
-            <p>{trip.name}</p>
-          </div>
+          <ListaViagem key={trip.id}>
+            <h4>{trip.name}</h4>
+            <button onClick={goToTripDetailsPage}>Ver detalhes</button>
+          </ListaViagem>
         )
       })}</p>
       <button onClick={goToCreateTripPage}>Criar Viagem</button>

@@ -10,10 +10,26 @@ const CriarContainer = styled.div`
 
 const Form = styled.form`
   width: 30vw;
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+`
+
+const Select = styled.select`
+  margin-bottom: 6px;
+`
+
+const Input = styled.input`
+  margin-bottom: 6px;
 `
 
 function CreateTripPage() {
+
+  // const {form, onChange} = useForm({
+  //   name: '',
+  //   planet: '',
+  //   description: '',
+  //   duration: ''
+  // })
 
   useProtectedPage()
 
@@ -21,12 +37,12 @@ function CreateTripPage() {
     <CriarContainer>
       <h1>Criar Viagem</h1>
       <Form>
-        <input
+        <Input
           required 
           placeholder="Nome da viagem"
           pattern={"[a-zA-ZsÀ-ú ]{5,}"}
         />
-        <select>
+        <Select>
           <option>Escolha um planeta</option>
           <option>Mercúrio</option>
           <option>Vênus</option>
@@ -36,18 +52,18 @@ function CreateTripPage() {
           <option>Saturno</option>
           <option>Urano</option>
           <option>Netuno</option>
-        </select>
-        <input
+        </Select>
+        <Input
           required
           placeholder="Data" 
           type="date"
         />
-        <input 
+        <Input 
           required
           placeholder="Descrição"
           pattern={"[a-zA-ZsÀ-ú ]{30,}"}
         />
-        <input
+        <Input
           required
           placeholder="Duração em dias" 
           type="number" 
