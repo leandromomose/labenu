@@ -19,7 +19,7 @@ function TripDetailsPage() {
   const [trip, setTrip] = useState()
   const params = useParams()
 
-  useEffect(() => {
+  const getTripDetail = () => {
     axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/leandro-dumont/trip/${params.id}`, {
       headers: {
         auth: localStorage.getItem('token')
@@ -27,7 +27,24 @@ function TripDetailsPage() {
     }).then((response) => {
       setTrip(response.data.trip)
     })
+  }
+
+  useEffect(() => {
+    getTripDetail()
   }, [])
+
+  const decideCandidate = (approve, candidateId) => {
+    const body = {
+        approve: approve
+    }
+    axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/leandro-dumont/trips/${params.id}/candidates/${candidateId}/decide`, body, {
+        headers: {
+            auth: localStorage.getItem('token')
+        }
+    }).then(() => {
+      getTripDetail()
+    })
+}
 
   useProtectedPage()
 
@@ -36,7 +53,7 @@ function TripDetailsPage() {
       <h1>Detalhes da Viagem</h1>
       {trip ? <Cards>
         <TripCard info={trip}/>
-        <Candidates candidates={trip.candidates}/>
+        <Candidates candidates={trip.candidates} decideCandidate={decideCandidate}/>
       </Cards> : <div>Carregando...</div>}
     </div>
   );

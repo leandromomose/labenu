@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -13,6 +14,16 @@ const ListaCandidatos = styled.div`
 `
 
 const Candidates = (props) => {
+
+
+    const approveCandidate = () => {
+        props.decideCandidate(true, props.candidate.id)
+    }
+
+    const rejectCandidate = () => {
+        props.decideCandidate(false, props.candidate.id)
+    }
+
     return(
         <CardContainer>
             <h2>Lista de Candidatos</h2>
@@ -20,8 +31,8 @@ const Candidates = (props) => {
                     return (
                         <ListaCandidatos>
                             <h4>{candidate.name}</h4>
-                            <button>Aprovar</button>
-                            <button>Desaprovar</button>
+                            <button onClick={approveCandidate}>Aprovar</button>
+                            <button onClick={rejectCandidate}>Desaprovar</button>
                         </ListaCandidatos>
                     )
                 })}
