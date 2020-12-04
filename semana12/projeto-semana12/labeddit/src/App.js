@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Router from './routes/Router';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import styled from 'styled-components';
 
 const Container = styled.div`

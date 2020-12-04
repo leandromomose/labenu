@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Button } from '@material-ui/core';
-import { goToFeed, goToLogin } from '../routes/coordinator';
+import { goToFeed, goToLogin } from '../../routes/coordinator';
 import { useHistory } from 'react-router-dom';
 import { ButtonsContainer } from './styled';
 
