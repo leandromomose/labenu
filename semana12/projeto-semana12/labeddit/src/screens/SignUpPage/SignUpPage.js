@@ -1,5 +1,5 @@
 import { Button, TextField } from '@material-ui/core';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from '../../hooks/useForm';
 import logoReddit from '../../assets/logo-reddit.png';
 import logoLabenu from '../../assets/logo-labenu.png'
@@ -7,10 +7,12 @@ import { FormContainer, SignUpPageContainer, Logos, TittleContainer } from './st
 import { useHistory } from 'react-router-dom';
 import { signup } from '../../services/user'
 import { useUnprotectedPage } from '../../hooks/useUnprotectedPage';
+import LoggedContext from '../../context/LoggedContext';
 
 const SignUpPage = () => {
     useUnprotectedPage()
     const history = useHistory()
+    const loggedContext = useContext(LoggedContext)
     const { form, onChange } = useForm({ email: "", password: "", username: "" })
 
     const handleInputChange = (event) => {
@@ -21,7 +23,7 @@ const SignUpPage = () => {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        signup(form, history)
+        signup(form, history, loggedContext.setLogged)
     }
 
     return (
