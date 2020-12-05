@@ -16,3 +16,4 @@ export const createPost = (body) => {
         console.log(error.message)
     })
 }
+

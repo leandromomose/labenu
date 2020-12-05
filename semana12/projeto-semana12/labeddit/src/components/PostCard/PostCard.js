@@ -34,7 +34,7 @@ const PostCard = (props) => {
             <VoteIcon src={arrowdown} />
           </Button>
           <p>{props.commentsCount}</p>
-          <p>comentários</p>
+          <Button onClick={() => goToPost(history, props.id)}>comentários</Button>
         </CardActions>
       </CardStyled>
     );
