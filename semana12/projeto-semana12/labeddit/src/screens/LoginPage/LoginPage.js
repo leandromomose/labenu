@@ -7,6 +7,7 @@ import logoLabenu from '../../assets/logo-labenu.png'
 import { FormContainer, LoginPageContainer, Logos, TittleContainer } from './styled';
 import { useHistory } from 'react-router-dom';
 import { useUnprotectedPage } from '../../hooks/useUnprotectedPage';
+import { goToSignUp } from '../../routes/coordinator';
 
 
 const LoginPage = () => {
@@ -60,6 +61,7 @@ const LoginPage = () => {
                 </FormContainer>
                 <Button
                     color="primary"
+                    onClick={() => goToSignUp(history)}
                 >
                     Cadastrar aqui!
                 </Button>

@@ -12,7 +12,7 @@ export function useRequestData(url, initialState) {
             Authorization: token
         }
     }).then((response) => {
-        setData(response.data.posts);
+        setData(response.data);
     }).catch((error) => {
         console.log(error);
     });
