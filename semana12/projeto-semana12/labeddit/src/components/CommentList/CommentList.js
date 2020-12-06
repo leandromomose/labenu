@@ -7,11 +7,19 @@ import arrowdown from '../../assets/arrowdown.png';
 const CommentList = (props) => {
 
     const handleUpVote = () => {
-        props.handleCommentVote(props.comment.id, 1)
+        if(props.comment.userVoteDirection === 1) {
+            props.handleCommentVote(props.comment.id, 0)  
+        } else {
+            props.handleCommentVote(props.comment.id, 1)
+        }
     }
 
     const handleDownVote = () => {
-        props.handleCommentVote(props.comment.id, -1)
+        if(props.comment.userVoteDirection === -1) {
+            props.handleCommentVote(props.comment.id, 0)
+        } else {
+            props.handleCommentVote(props.comment.id, -1)
+        }
     }
 
     return (

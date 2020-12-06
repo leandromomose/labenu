@@ -7,9 +7,12 @@ import { Button, TextField } from '@material-ui/core';
 import { FormContainer, PostContainer } from './styled';
 import { useForm } from '../../hooks/useForm';
 import { createPost } from '../../services/post';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const FeedPage = () => {
     useProtectedPage()
+    const params = useParams()
 
     const { form, onChange, resetForm } = useForm({ text: "", title: "" })
 
@@ -28,6 +31,24 @@ const FeedPage = () => {
     const data = useRequestData(`${BASE_URL}/posts`, [])
 
     const posts = data.posts
+
+    const handleVotePost = (postId, direction) => {
+        const token = localStorage.getItem("token")
+
+        const body ={
+            direction: direction
+        }
+
+        axios.post(`${BASE_URL}/posts/${params.id}/vote`, body, {
+            headers: {
+                Authorization: token
+            }
+        }).then((response) => {
+            console.log(response)
+        }).catch((error) => {
+            console.log(error.message)
+        })
+    }
 
     return (
         <div>
@@ -66,6 +87,7 @@ const FeedPage = () => {
                     text={post.text}
                     votesCount={post.votesCount}
                     commentsCount={post.commentsCount}
+                    handleVotePost={handleVotePost}
                 />
             })}
         </div>

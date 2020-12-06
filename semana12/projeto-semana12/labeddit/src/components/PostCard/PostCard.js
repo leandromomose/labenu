@@ -13,6 +13,14 @@ import { useHistory } from 'react-router-dom';
 const PostCard = (props) => {
     const history = useHistory()
 
+    const handleUpVote = () => {
+      props.handleVotePost(props.id, 1)
+    }
+
+    const handleDownVote = () => {
+      props.handleVotePost(props.post.id, -1)
+    }
+
     return (
       <CardStyled onClick={() => goToPost(history, props.id)}>
         <CardActionArea>
@@ -26,11 +34,11 @@ const PostCard = (props) => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
+          <Button onClick={handleUpVote} size="small" color="primary">
             <VoteIcon src={arrowup} />
           </Button>
           <p>{props.votesCount}</p>
-          <Button size="small" color="primary">
+          <Button onClick={handleDownVote} size="small" color="primary">
             <VoteIcon src={arrowdown} />
           </Button>
           <p>{props.commentsCount}</p>
