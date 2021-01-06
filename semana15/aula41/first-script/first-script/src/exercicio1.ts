@@ -42,8 +42,25 @@
 
 // e- 
 
-type infosPerson = {
-    nome: string, 
-    idade: number, 
-    corFavorita: string
-}
+// enum CoresArcoIris {
+//     VIOLETA = "Violeta",
+//     ANIL = "Anil",
+//     AZUL = "Azul",
+//     VERDE = "Verde",
+//     AMARELO = "Amarelo",
+//     LARANJA = "Laranja",
+//     VERMELHO = "Vermelho"
+// }
+
+// type infosPerson = {
+//     nome: string, 
+//     idade: number, 
+//     corFavorita: CoresArcoIris
+// }
+
+// const person: infosPerson = {
+//     nome: "Leandro",
+//     idade: 34,
+//     corFavorita: CoresArcoIris.AZUL
+// }
+
