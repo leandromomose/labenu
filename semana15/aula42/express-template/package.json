@@ -6,6 +6,9 @@
    "scripts": {
       "start": "tsc && node build/index.js",
       "endpoint1": "tsc && node build/endpoint1.js",
+      "endpoint2": "tsc && node build/endpoint2.js",
+      "endpoint3": "tsc && node build/endpoint3.js",
+      "endpoint4": "tsc && node build/endpoint4.js",
       "test": "echo \"Error: no test specified\" && exit 1"
    },
    "keywords": [],
