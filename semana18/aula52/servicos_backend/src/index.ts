@@ -8,6 +8,7 @@ import { getUserById } from "./endpoints/getUserById";
 import { deleteUser } from "./endpoints/deleteUser";
 import { getInfoUserById } from "./endpoints/getInfoUserById";
 import { getAddressInfo } from "./endpoints/getAddressInfo";
+import { resetPassword } from "./endpoints/resetPassword";
 
 
 dotenv.config();
@@ -34,6 +35,7 @@ app.get("/user/profile", getUserById)
 app.delete("/user/:id", deleteUser)
 app.get("/user/:id", getInfoUserById)
 app.get("/address/:cep", getAddressInfo)
+app.post("/user/password/reset", resetPassword)
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
