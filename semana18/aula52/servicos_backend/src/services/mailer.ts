@@ -7,8 +7,8 @@ export const config: SMTPTransport.Options = {
     host: "smtp.mailtrap.io",
     port: 2525,
     auth: {
-        user: "16f620590392b9",
-        pass: "ec8eb8fc1bfb1e"
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
     }
 }
 
