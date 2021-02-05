@@ -4,14 +4,20 @@ import { connection } from "./connections";
 export const insertUser = async (
     user: User
 ) => {
-    await connection
-        .insert({
-            id: user.id,
-            name: user.name,
-            email: user.email,
-            password: user.password
-        })
-        .into('labook_users')
+
+    try {
+
+        await connection('labook_users')
+            .insert({
+                id: user.id,
+                name: user.name,
+                email: user.email,
+                password: user.password
+            })
+
+    } catch (error) {
+        throw new Error(error.sqlMessage)
+    }
 }
 
 export const selectUserByEmail = async (
@@ -32,6 +38,6 @@ export const selectUserByEmail = async (
         return user
 
     } catch (error) {
-        throw new Error(error.slqMessage || error.message)
+        throw new Error(error.slqMessage)
     }
 }
