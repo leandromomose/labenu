@@ -1,39 +1,44 @@
-import { Post } from "../business/entities/post"
-import { connection } from "./connections"
+import { Post, toPostModel } from "../business/entities/post";
+import { BaseDatabase } from "./BaseDatabase";
 
-export const insertPost = async (
-    post: Post
-) => {
 
-    try {
+export class PostDatabase extends BaseDatabase {
 
-        await connection('labook_posts')
-            .insert({
-                id: post.id,
-                photo: post.photo,
-                description: post.description,
-                createdAt: post.createdAt,
-                author_id: post.authorId
-            })
+    createPost = async(
+        post: Post
+        ) => {
 
-    } catch (error) {
-        throw new Error(error.sqlMessage)
+        try {
+
+            await this.connection("labook_posts")
+                .insert({
+                    id: post.id,
+                    photo: post.photo,
+                    description: post.description,
+                    type: post.type,
+                    author_id: post.authorId,
+                    created_at: post.createdAt.toISOString().substring(0, 10)
+                })
+
+        } catch (error) {
+            throw new Error(error.sqlMessage || error.message);
+        }
     }
-}
 
-export const selectPostById = async (
-    id: string
-): Promise<any> => {
+    getPostById = async(
+        id: string
+        ): Promise<Post> => {
+        try {
 
-    try {
+            const result: any = await this.connection("labook_posts")
+                .select("*")
+                .where({ id })
 
-        const queryResult: any = await connection("labook_posts")
-            .select("*")
-            .where({ id })
+            return toPostModel(result[0]);
 
-        return queryResult
-
-    } catch (error) {
-        throw new Error(error.sqlMessage)
+        } catch (error) {
+            throw new Error(error.sqlMessage || error.message);
+        }
     }
+
 }

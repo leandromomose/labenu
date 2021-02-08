@@ -1,32 +1,59 @@
 import { Request, Response } from "express";
-import { businessLogin, businessSignup } from "../business/userBusiness";
+import { SignupInputDTO, LoginInputDTO } from "../business/entities/user";
+import { UserBusiness } from "../business/userBusiness";
 
-export const signup = async (
-    req: Request,
-    res: Response
-) => {
-    try {
-        const { name, email, password } = req.body
 
-        const token = await businessSignup(name, email, password)
+export class UserController {
 
-        res.status(201).send({ message: "User created!", token })
+    signup = async(
+        req: Request, 
+        res: Response
+        ) => {
 
-    } catch (error) {
-        res.status(400).send(error.message || error.sqlMessage)
+        try {
+            let message = "User created";
+
+            const input: SignupInputDTO = {
+                name: req.body.name,
+                email: req.body.email,
+                password: req.body.password
+            }
+
+            const userBusiness = new UserBusiness();
+            const token = await userBusiness.signup(input);
+
+            res.status(201).send({ message, token })
+
+        } catch (error) {
+            res.statusCode = 400
+            let message = error.sqlMessage || error.message
+
+            res.send({ message })
+        }
+
     }
-}
 
-export const login = async (
-    req: Request,
-    res: Response
-): Promise<void> => {
-    try {
-        const { email, password } = req.body
+    login = async(
+        req: Request, 
+        res: Response
+        ) => {
+        try {
+            let message = "User logged!"
 
-        const token = await businessLogin(email, password)
+            const input: LoginInputDTO = {
+                email: req.body.email,
+                password: req.body.password
+            }
 
-        res.send({message: "User logged sucessfuly", token})
+            const token = await new UserBusiness().login(input);
 
-    } catch (error) {res.status(400).send(error.message || error.sqlMessage)}
+            res.status(200).send({ message, token })
+
+        } catch (error) {
+            let message = error.sqlMessage || error.message
+            res.statusCode = 400
+
+            res.send({ message })
+        }
+    }
 }

@@ -1,43 +1,43 @@
-import { User } from "../business/entities/user";
-import { connection } from "./connections";
+import { User, toUserModel } from "../business/entities/user";
+import { BaseDatabase } from "./BaseDatabase";
 
-export const insertUser = async (
-    user: User
-) => {
 
-    try {
+export class UserDatabase extends BaseDatabase {
 
-        await connection('labook_users')
-            .insert({
-                id: user.id,
-                name: user.name,
-                email: user.email,
-                password: user.password
-            })
+    insertUser = async(
+        user: User
+        ) => {
 
-    } catch (error) {
-        throw new Error(error.sqlMessage)
-    }
-}
+        try {
 
-export const selectUserByEmail = async (
-    email: string
-): Promise<User> => {
-    try {
-        const queryResult: any = await connection("labook_users")
-            .select("*")
-            .where({ email })
+            await this.connection('labook_users')
+                .insert({
+                    id: user.id,
+                    name: user.name,
+                    email: user.email,
+                    password: user.password
+                });
 
-        const user: User = {
-            id: queryResult[0].id,
-            name: queryResult[0].name,
-            email: queryResult[0].email,
-            password: queryResult[0].password
+        } catch (error) {
+            throw new Error(error.sqlMessage || error.message);
         }
-
-        return user
-
-    } catch (error) {
-        throw new Error(error.slqMessage)
     }
+
+
+    getUserByEmail = async(
+        email: string
+        ): Promise<User> => {
+        try {
+
+            const result: any = await this.connection("labook_users")
+                .select("*")
+                .where({ email });
+
+            return toUserModel(result[0]);;
+
+        } catch (error) {
+            throw new Error(error.sqlMessage || error.message)
+        }
+    }
+
 }

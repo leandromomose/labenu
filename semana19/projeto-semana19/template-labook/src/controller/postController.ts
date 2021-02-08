@@ -1,44 +1,64 @@
 import { Request, Response } from "express";
-import { Post, POST_TYPES } from "../business/entities/post";
-import { businessCreatePost, businessGetPostById } from "../business/postBusiness";
-import { AuthenticationData, getTokenData } from "../business/services/authenticator";
-import dayjs from "dayjs";
-import { generateId } from "../business/services/idGenerator";
+import { createPostInputDTO, getPostByIdInputDTO, Post, getPostByIdOutputDTO } from "../business/entities/post";
+import { PostBusiness } from "../business/postBusiness";
 
-export const createPost = async (
-    req: Request,
-    res: Response
-) => {
-    try {
-        const { photo, description, type } = req.body
 
-        const token: string = req.headers.authorization as string
+export class PostController {
 
-        await businessCreatePost(
-            photo,
-            description,
-            type
-        )
+    createPost = async (
+        req: Request, 
+        res: Response
+        ) => {
+        try {
 
-        res.status(200).send({ message: 'Post created!' })
+            let message = "Post created!"
+            const token: string = req.headers.authorization as string
 
-    } catch (error) {
-        res.send({ message: error.message || error.sqlMessage })
+            const input: createPostInputDTO = {
+                photo: req.body.photo,
+                description: req.body.description,
+                type: req.body.type,
+                token
+            }
+
+            await new PostBusiness().createUser(input);
+
+            res.status(201).send({ message })
+
+        } catch (error) {
+            let message = error.sqlMessage || error.message
+            res.statusCode = 400
+
+            res.send({ message })
+        }
     }
-}
 
-export const getPostById = async (
-    req: Request,
-    res: Response
-) => {
-    try {
-        const { id } = req.params
+    getPostById = async (
+        req: Request, 
+        res: Response
+        ) => {
+        try {
 
-        const post = await businessGetPostById(id)
+            let message = "Success!"
 
-        res.status(200).send(post)
-        
-    } catch (error) {
-        res.send({ message: error.message || error.sqlMessage })
+            const input: getPostByIdInputDTO = {
+                id: req.params.id
+            }
+            const post: Post = await new PostBusiness().getPostById(input);
+            const output: getPostByIdOutputDTO = {
+                photo: post.photo,
+                type: post.type,
+                description: post.description,
+                createdAt: post.createdAt
+            }
+
+            res.status(200).send({ message, output })
+
+        } catch (error) {
+            let message = error.sqlMessage || error.message
+            res.statusCode = 400
+
+            res.send({ message })
+        }
     }
 }
