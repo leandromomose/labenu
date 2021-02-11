@@ -1,5 +1,5 @@
 import { CustomError } from "../errors/CustomError";
-import { User, stringToUserRole } from "../model/User";
+import { User, stringToUserRole, UserRole } from "../model/User";
 import { UserDatabase } from "../data/UserDatabase";
 import { HashGenerator } from "../services/hashGenerator";
 import { IdGenerator } from "../services/idGenerator";
@@ -12,7 +12,7 @@ export class UserBusiness {
       private hashGenerator: HashGenerator,
       private userDatabase: UserDatabase,
       private tokenGenerator: TokenGenerator
-      ){}
+   ) { }
 
    public async signup(
       name: string,
@@ -85,6 +85,65 @@ export class UserBusiness {
          });
 
          return { accessToken };
+      } catch (error) {
+         throw new CustomError(error.statusCode, error.message)
+      }
+   }
+
+   public async getUserById(id: string) {
+      try {
+
+         const user = await this.userDatabase.getUserById(id)
+
+         if (!user) {
+            throw new CustomError(404, "User not found")
+         }
+
+         return {
+            id: user.getId(),
+            name: user.getName(),
+            email: user.getEmail(),
+            role: user.getRole()
+         }
+      } catch (error) {
+         throw new CustomError(error.statusCode, error.message)
+      }
+   }
+
+   public async getAllUsers(role: UserRole) {
+      try {
+         if (stringToUserRole(role) !== UserRole.ADMIN) {
+            throw new CustomError(401, "Only ADMIN users are able to make this request")
+         }
+
+         const users = await this.userDatabase.getAllUsers()
+
+         return users.map((user) => ({
+            id: user.getId(),
+            name: user.getName(),
+            email: user.getEmail(),
+            role: user.getRole(),
+         }));
+      } catch (error) {
+         throw new CustomError(error.statusCode, error.message)
+      }
+   }
+
+   public async getProfile(token: string) {
+      try {
+         const userData = this.tokenGenerator.verify(token);
+         const user = await this.userDatabase.getUserById(userData.id);
+
+         if (!user) {
+            throw new CustomError(404, "User not found")
+         }  
+
+         return {
+            id: user.getId(),
+            name: user.getName(),
+            email: user.getEmail(),
+            role: user.getRole()
+         }
       } catch (error) {
          throw new CustomError(error.statusCode, error.message)
       }
