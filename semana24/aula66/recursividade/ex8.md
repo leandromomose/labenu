@@ -1,0 +1,1 @@
+### Complexidade O(b), pois a função depende do valor de b e não há loops.

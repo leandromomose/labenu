@@ -1,0 +1,1 @@
+### Complexidade O(2^n), pois existe nó na função.
