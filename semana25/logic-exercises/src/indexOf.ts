@@ -7,4 +7,4 @@ export const indexOf = (source: string, query: string): number => {
     return -1
 }
 
-console.log(indexOf("leandro", "d"))
+// console.log(indexOf("leandro", "d"))
