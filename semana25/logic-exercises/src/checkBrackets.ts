@@ -25,4 +25,4 @@ export const checkBrackets = (string: string = "(" || ")" || "[" || "]" || "{" |
     return true
 }
 
-console.log(checkBrackets("()"))
+// console.log(checkBrackets("()"))
